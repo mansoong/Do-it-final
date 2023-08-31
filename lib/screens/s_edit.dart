@@ -1,4 +1,5 @@
 import 'package:do_it/custom__icons2_icons.dart';
+import 'package:do_it/widgets/w_overlay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gif/flutter_gif.dart';
 import 'package:photo_view/photo_view.dart';
@@ -132,18 +133,19 @@ class _EditScreenState extends State<EditScreen> {
                         ),
                       ),
                       onPressed : () async {
-                        String? result = await showDialog<String>(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return const AlertDialog(
-                                content: TextField(
-                                  autofocus: false,
-                                  decoration:
-                                  InputDecoration(labelText: "Angela Yu"),
-                                ),
-                              );
-                            });
+                        showOverlayTextField(context);
                       },
+                        // String? result = await showDialog<String>(
+                        //     context: context,
+                        //     builder: (BuildContext context) {
+                        //       return AlertDialog(
+                        //         content: TextField(
+                        //           autofocus: false,
+                        //           decoration:
+                        //           InputDecoration(labelText: "Angela Yu"),
+                        //         ),
+                        //       );
+                        //     });
                     ),
                   ),
                   SizedBox(height: 10,
