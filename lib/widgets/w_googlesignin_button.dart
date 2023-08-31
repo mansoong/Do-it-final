@@ -15,8 +15,12 @@ class _GoogleSignInButton extends State<GoogleSignInButton> {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: () async {
-        await _authMethods.signInWithGoogle(context);
-        Navigator.pushNamed(context, '/home');
+        try {
+          await _authMethods.signInWithGoogle(context);
+          Navigator.pushNamed(context, '/home');
+        } catch (e) {
+          print('Login cancelled by user');
+        }
       },
       icon: const Image(
         image: AssetImage("assets/images/google-logo.png"),
@@ -37,7 +41,7 @@ class _GoogleSignInButton extends State<GoogleSignInButton> {
         backgroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           side: BorderSide(
             color: Colors.grey.withOpacity(0.5),
             width: 2,

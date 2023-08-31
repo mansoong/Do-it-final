@@ -37,7 +37,7 @@ class _FacebookSignInButtonState extends State<FacebookSignInButton> {
         backgroundColor: const Color(0xff3b5998),
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           side: BorderSide(
             color: Colors.grey.withOpacity(0.5),
             width: 2,
